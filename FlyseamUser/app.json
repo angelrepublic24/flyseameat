@@ -2,6 +2,7 @@
   "expo": {
     "name": "FlyseamUser",
     "slug": "FlyseamUser",
+    "description": "This is an app like UberEat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +16,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.angelrepublic24.FlyseamUser"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.angelrepublic24.FlyseamUser"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    // "extra": {
+    //   "eas": {
+    //     "projectId": "50cea0e5-586f-4f34-8cb4-97ddc26c6da5"
+    //   }
+    // }
   }
 }

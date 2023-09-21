@@ -1,8 +1,23 @@
 import { StyleSheet, FlatList, View } from 'react-native';
-import restaurants from '../../../assets/data/restaurants.json'
 import RestaurantComponent from '../../components/RestaurantComponent'
+import { useEffect, useState } from 'react';
+import { Restaurant } from '../../models';
+import { DataStore } from 'aws-amplify';
+export default function HomeScreen(){
+  const [restaurants, setRestaurants] = useState([]);
 
-const HomeScreen = () => {
+ /* const fetchRestaurant = async () => {
+    long route
+   const results = await DataStore.query(Restaurant);
+   console.log(results)
+    setRestaurants(results)
+  };*/
+
+  useEffect(()=> {
+    //short route
+    DataStore.query(Restaurant).then(setRestaurants);
+    // fetchRestaurant();
+  }, []);
   return (
     <View style={styles.page}>
        <FlatList 
@@ -20,5 +35,3 @@ const styles = StyleSheet.create({
     padding: 10
   }
 });
-
-export default HomeScreen;

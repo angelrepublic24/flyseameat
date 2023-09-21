@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 const OrderListItem = ({order}) => {
   const navigation = useNavigation();
   return (
-    <Pressable onPress={() => navigation.navigate("Order", {id: order.id})} style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}>
+    <Pressable onPress={() => navigation.navigate("Details", {id: order.id})} style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}>
       <Image 
         source={{uri: order.Restaurant.image}}
         style={{width: 85, height: 85, marginRight: 5}}
